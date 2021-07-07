@@ -11,9 +11,9 @@ class EntradaAnimal(models.Model):
     publicacion = models.DateTimeField(
         blank=True, null=True)
     def publish(self):
-        self.published_date = timezone.now()
+        self.publicacion = timezone.now()
         self.save()
 
     def __str__(self):
-        return self.title
+        return self.nombreAnimal
 
