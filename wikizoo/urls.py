@@ -5,6 +5,6 @@ from .views import animal, main
 
 urlpatterns = [
     path('', main, name="Main"),
-    path('Animal', animal, name="Animal")
+    path('Animal', animal, name="Animal"),
 ]
 
