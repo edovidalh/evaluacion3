@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="cisne.css" />
+    <link rel="shortcut icon" href="PATA.ico">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="template/MultiLevelMenu-master/css/component.css" />
+    <link rel="stylesheet" type="text/css" href="template/MultiLevelMenu-master/css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="template/MultiLevelMenu-master/css/organicfoodicons.css" />
+    <title>WikiZooChile - El Cisne de Cuello Negro</title>
+</head>
+<body>
+    <body>
+        <div class="container">
+            <header>
+                <p>
+                    <a href="Main.html"> volver a WikiZooChile</a>
+                </p>
+                <p>
+                    <a href="Animal.html"> volver a Animales</a>
+                </p>
+                <p>
+                    <h1>El Cisne de Cuello Negro</h1>
+                </p>
+            </header>
+        <section>
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="FotoCisne1" src="img/cisne1.jpg" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="FotoCisne2" src="img/cisne2.jpg" alt="Second slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="FotoCisne3" src="img/cisne3.jpg" alt="Third slide">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+                <h1>Descripción</h1>
+                <p>El cisne cuellinegro (Cygnus melancoryphus), también conocido como cisne de cuello negro en el Cono Sur,​ es una especie de ave anseriforme de la familia Anatidae propia de América del Sur, inconfundible por su cabeza y cuello negro y su cuerpo blanco.
+                    No hay dimorfismo sexual en el plumaje aunque sí en el tamaño siendo el macho más grande que la hembra, presentando la carúncula roja más desarrollada, en la base del pico. Este es el cisne más pequeño del género Cygnus, tiene una longitud total de 102 a 124 cm.
+                    Una vez que son adultos, el plumaje de la cabeza y cuello es negro excepto por una línea blanca que corre del pico al centro del ojo y se extiende hacia la parte posterior de la cabeza. El resto del plumaje es blanco. La piel facial es roja al igual que la carúncula que le crece sobre el pico. Las patas son rosadas.
+                    Mudan las plumas anualmente, al final de temporada de cría y antes de la migración hacia el norte. Vive en cautiverio unos 7 años, hay registros de 20 años de vida.
+                </p>
+            </p>
+            <p>
+                <h1>Hábitat</h1>
+                <p>Habita lagunas y lagos de agua dulce o salobre y en las costas del mar. Frecuenta las marismas y depósitos de agua donde crecen algas y plancton. Es un ave muy acuática si se la compara con otros cisnes. Pasa la mayor parte del tiempo en el agua, resultándole dificultoso el caminar. Ocupa ambientes desde el nivel del mar, hasta los 3300 msnm.</p>
+            </p>
+            <p>
+                <h1>Distribución</h1>
+                <p>Su distribución geográfica es desde el sur de Brasil hasta Tierra del Fuego. En primavera y verano austral cría en Chile, Paraguay, sur de Bolivia, Argentina y Uruguay. También cría en las Islas Malvinas. Durante esta temporada algunos individuos llegan hasta el Canal de Beagle al sur de la Isla Grande en Tierra del Fuego y el archipiélago Juan Fernández en Chile. En invierno migra al norte, siendo más abundante en Paraguay, sur boliviano y en Rio Grande do Sul, Santa Catarina y Paraná de Brasil. En Chile casi se extinguen debido a un desastre ambiental que empezó en 2004; un importante lugar donde se encuentran es la Reserva Nacional El Yali.
+                </p>
+            </p>
+        </section>     
+</div>
+<script src="template/MultiLevelMenu-master/js/classie.js"></script>
+<script src="dummydata.js"></script>
+<script src="template/MultiLevelMenu-master/js/main.js"></script>
+<script>
+    (function () {
+        var menuEl = document.getElementById('ml-menu'),
+            mlmenu = new MLMenu(menuEl, {
+                // breadcrumbsCtrl : true, // show breadcrumbs
+                // initialBreadcrumb : 'all', // initial breadcrumb text
+                backCtrl: false, // show back button
+                // itemsDelayInterval : 60, // delay between each menu item sliding animation
+                onItemClick: loadDummyData // callback: item that doesn´t have a submenu gets clicked - onItemClick([event], [inner HTML of the clicked item])
+            });
+
+        // mobile menu toggle
+        var openMenuCtrl = document.querySelector('.action--open'),
+            closeMenuCtrl = document.querySelector('.action--close');
+
+        openMenuCtrl.addEventListener('click', openMenu);
+        closeMenuCtrl.addEventListener('click', closeMenu);
+
+        function openMenu() {
+            classie.add(menuEl, 'menu--open');
+            closeMenuCtrl.focus();
+        }
+
+        function closeMenu() {
+            classie.remove(menuEl, 'menu--open');
+            openMenuCtrl.focus();
+        }
+
+        // simulate grid content loading
+        var gridWrapper = document.querySelector('.content');
+
+        function loadDummyData(ev, itemName) {
+            ev.preventDefault();
+
+            closeMenu();
+            gridWrapper.innerHTML = '';
+            classie.add(gridWrapper, 'content--loading');
+            setTimeout(function () {
+                classie.remove(gridWrapper, 'content--loading');
+                gridWrapper.innerHTML = '<ul class="products">' + dummyData[itemName] + '<ul>';
+            }, 700);
+        }
+    })();
+</script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

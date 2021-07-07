@@ -1,0 +1,23 @@
+*{
+    background-color: rgb(245, 235, 235);
+
+}
+
+#inicio{
+    text-align:left; 
+    color:  rgb(48, 46, 46);
+
+    
+}
+#navegacion{
+    float: right;
+
+}
+.AvesIndex{
+    width: 200px;
+    height: 200px;
+}
+.TerrestresIndex{ 
+    width: 200px;
+    height: 200px;
+}
