@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+    <head>
+	    <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Animales</title>
+        <meta name="description" content="Blueprint: A basic template for a responsive multi-level menu" />
+        <meta name="keywords" content="blueprint, template, html, css, menu, responsive, mobile-friendly" />
+        <meta name="author" content="Codrops" />
+        <link rel="shortcut icon" href="PATA.ico">
+        <link rel="stylesheet" type="text/css" href="template/MultiLevelMenu-master/css/component.css" />
+        <link rel="stylesheet" type="text/css" href="template/MultiLevelMenu-master/css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="template/MultiLevelMenu-master/css/organicfoodicons.css" />
+	
+    <script src="template/MultiLevelMenu-master/js/modernizr-custom.js"></script>
+    <script src="template/MultiLevelMenu-master/js/main.js"></script>
+    <script src="dummydata.js"></script>
+    <script src="template/MultiLevelMenu-master/js/classie.js"></script>
+</head>
+
+<body>
+	<!-- Main container -->
+	<div class="container">
+		<!-- Blueprint header -->
+		<header class="bp-header cf">
+			<div class="dummy-logo">
+				<!-- aqui vendrian los animales -->
+				<h2 class="dummy-heading">Animales</h2>
+			</div>
+			<div class="bp-header__main">
+				<span class="bp-header__present">WIKI <span class="bp-tooltip bp-icon bp-icon--about" data-content="Aqui usted podra encontrar los animales que busca por su respectivo nombre y foto y con los botones de abajo devolverse si lo desea."></span></span>
+				<h1 class="bp-header__title">Menu Multiple</h1>
+				<nav class="bp-nav">
+					<a class="bp-nav__item bp-icon bp-icon--prev" href="Main.html" data-info="Pagina Principal"><span>Pagina principal</span></a>
+				</nav>
+			</div>
+		</header>
+		<button class="action action--open" aria-label="Open Menu"><span class="Imagen"></span></button>
+		<nav id="ml-menu" class="menu">
+			<button class="action action--close" aria-label="Close Menu"><span class="icon icon--cross"></span></button>
+			<div class="menu__wrap">
+			    <!-- las categorias que existiras -->
+				<ul data-menu="main" class="menu__level" tabindex="-1" role="menu" aria-label="All">					
+                    <li class="menu__item" role="menuitem"><a class="menu__link" href="#">Terrestres</a></li>
+					<li class="menu__item" role="menuitem"><a class="menu__link" href="#">Voladores</a></li>
+					<li class="menu__item" role="menuitem"><a class="menu__link" href="Subir.html">Registrase</a></li>
+					
+			</div>
+		</nav>
+		<div class="content">
+			<p class="info">Escoga una categoria</p>
+			<!-- Ajax loaded content here -->
+		</div>
+	</div>
+	<!-- /view -->
+	<script src="template/MultiLevelMenu-master/js/classie.js"></script>
+	<script src="dummydata.js"></script>
+	<script src="template/MultiLevelMenu-master/js/main.js"></script>
+	<script>
+	(function() {
+		var menuEl = document.getElementById('ml-menu'),
+			mlmenu = new MLMenu(menuEl, {
+				// breadcrumbsCtrl : true, // show breadcrumbs
+				// initialBreadcrumb : 'all', // initial breadcrumb text
+				backCtrl : false, // show back button
+				// itemsDelayInterval : 60, // delay between each menu item sliding animation
+				onItemClick: loadDummyData // callback: item that doesn´t have a submenu gets clicked - onItemClick([event], [inner HTML of the clicked item])
+			});
+
+		// mobile menu toggle
+		var openMenuCtrl = document.querySelector('.action--open'),
+			closeMenuCtrl = document.querySelector('.action--close');
+
+		openMenuCtrl.addEventListener('click', openMenu);
+		closeMenuCtrl.addEventListener('click', closeMenu);
+
+		function openMenu() {
+			classie.add(menuEl, 'menu--open');
+			closeMenuCtrl.focus();
+		}
+
+		function closeMenu() {
+			classie.remove(menuEl, 'menu--open');
+			openMenuCtrl.focus();
+		}
+
+		// simulate grid content loading
+		var gridWrapper = document.querySelector('.content');
+
+		function loadDummyData(ev, itemName) {
+			ev.preventDefault();
+
+			closeMenu();
+			gridWrapper.innerHTML = '';
+			classie.add(gridWrapper, 'content--loading');
+			setTimeout(function() {
+				classie.remove(gridWrapper, 'content--loading');
+				gridWrapper.innerHTML = '<ul class="products">' + dummyData[itemName] + '<ul>';
+			}, 700);
+		}
+	})();
+	</script>
+</body>
+
+</html>
