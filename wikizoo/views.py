@@ -6,3 +6,6 @@ def main(request):
 
 def animal(request):
     return render(request, 'wikizoo/Animal.html')
+
+def informacion (request):
+    return render (request, 'wikizoo/Informacion.html')

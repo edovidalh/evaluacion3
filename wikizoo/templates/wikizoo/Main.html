@@ -10,13 +10,13 @@
         <meta name="description" content="Perspective Page View Navigation: Transforms the page in 3D to reveal a menu" />
         <meta name="keywords" content="3d page, menu, navigation, mobile, perspective, css transform, web development, web design" />
         <meta name="author" content="Codrops" />
-        <link rel="shortcut icon" href="../favicon.ico">
-        <link rel="stylesheet" type="text/css" href="template/PerspectivePageViewNavigation/css/component.css" />
-        <link rel="stylesheet" type="text/css" href="template/PerspectivePageViewNavigation/css/demo.css" />
-        <link rel="stylesheet" type="text/css" href="template/PerspectivePageViewNavigation/css/normalize.css" />
+        <link rel="shortcut icon" href="{% static '../favicon.ico' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'template/PerspectivePageViewNavigation/css/component.css' %}"  />
+        <link rel="stylesheet" type="text/css" href="{% static 'template/PerspectivePageViewNavigation/css/demo.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'template/PerspectivePageViewNavigation/css/normalize.css' %}" />
 
-    <script src="template/PerspectivePageViewNavigation/js/modernizr.custom.25376.js"></script>
-    <title>wike</title>
+    <script src="{% static 'template/PerspectivePageViewNavigation/js/modernizr.custom.25376.js' %}"></script>
+    <title>wiki</title>
 </head>
 <body>
     <div id="perspective" class="perspective effect-airbnb">
@@ -32,7 +32,7 @@
                     </div>
                     <div class="column">
                         <nav class="codrops-demos">
-                            <p>Esta pagina es una wiki de animales hecha por alumnos que mostrara algunos animales que no conozcas y te dara la infromacion de ellos que tu no cepas o no conozcas.</p>
+                            <p>Esta pagina es una wiki de animales hecha por alumnos que mostrara algunos animales que no conozcas y te dara la informacion de ellos que tu no cepas o no conozcas.</p>
                         </nav>
                     </div>
                 </div><!-- /main -->
@@ -40,12 +40,12 @@
         </div><!-- /container -->
         <nav class="outer-nav left vertical">
 				<a href="Animal">Animales</a>
-				<a href="Informacion.html">Informacion</a>
+				<a href="Informacion"> Info</a>
 				
 				
 			</nav>
     </div>  
-    <script src="template/PerspectivePageViewNavigation/js/classie.js"></script>
-    <script src="template/PerspectivePageViewNavigation/js/menu.js"></script>
+    <script src=" {% static 'template/PerspectivePageViewNavigation/js/classie.js' %}"></script>
+    <script src="{% static 'template/PerspectivePageViewNavigation/js/menu.js' %}"></script>
 </body>
 </html>
